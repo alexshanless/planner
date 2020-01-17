@@ -41,11 +41,13 @@ function CreateRow(time, event){
     
 }
 
-$('.saveBtn').on('click', function (event) {
-    event.preventDefault();
-        //var inputElemnet = $(this).closest('tr').find('.names');
-   localStorage.setItem('textarea', (textarea).val());
-    var testing = localStorage.getItem(textarea);
+var saveBtn = $('.saveBtn');
+saveBtn.on('click', function(){
+    let textArea = $(this).parent().children('textarea').val();
+    console.log(textArea);
+    let timeSlot =  $(this).parent().children('div.col-1.hour').text()
+    console.log(timeSlot);
+    localStorage.setItem(timeSlot, textArea);
     console.log(localStorage);
     
 })
