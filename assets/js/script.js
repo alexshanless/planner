@@ -19,9 +19,7 @@ function CreateRow(time) {
     var thisMoment = moment(time, "H")
     var key = thisMoment.format('h a')
 
-    // schedule['9 am']
-    // schedule['10 am']
-    // schedule['11 am']
+
     var event = schedule[key]
 
     var row = $("<div>").addClass('row time-block')
@@ -51,7 +49,6 @@ function CreateRow(time) {
 $('.saveBtn').on('click', function () {
     let textArea = $(this).parent().children('textarea').val();
     let timeSlot = $(this).parent().children('div.col-1.hour').text()
-    //schedule['9 am'] = 'some event'
     schedule[timeSlot] = textArea
     console.log(schedule)
 
@@ -59,16 +56,16 @@ $('.saveBtn').on('click', function () {
     // localStorage.setItem("dayplanner", schedule)
 })
 
-// var data = {
-//     name: "Ben"
-// }
+//  var data = {
+//      name: "Ben"
+//  }
 
-// var key = 'name'
+// // var key = 'name'
 
-// console.log(data.name)
-// console.log(data.key)
-// data.age = 31
-// console.log(data)
+// // console.log(data.name)
+// // console.log(data.key)
+// // data.age = 31
+// // console.log(data)
 
 // key = 'job'
 // data[key] = 'tutor'
@@ -76,6 +73,5 @@ $('.saveBtn').on('click', function () {
 
 // console.log(data['name'])
 // console.log(data[key])
-// console.log(data)
 
 // localStorage.setItem("dayplanner", JSON.stringify({ data: 'someData' }))
